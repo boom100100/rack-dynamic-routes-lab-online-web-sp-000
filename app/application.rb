@@ -10,7 +10,7 @@ class Application
     if req.path.match(/items/)
 
       @@items.select {|item|
-        return item.name = req.path.split("/items/").last
+        item.name = req.path.split("/items/").last
       }.uniq
 
       if match_value != nil
