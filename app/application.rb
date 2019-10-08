@@ -12,7 +12,7 @@ class Application
       match_value = @@items.select {|item|
         item.name = req.path.split("/items/").last
       }
-      
+
       if match_value != nil
         puts match_value
         resp.write "#{match_value.price}"
