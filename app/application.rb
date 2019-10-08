@@ -11,7 +11,7 @@ class Application
 
       match_value = @@items.select {|item|
         item.name = req.path.split("/items/").last
-      }
+      }.uniq
 
       if match_value != nil
         puts match_value.length
