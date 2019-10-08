@@ -10,7 +10,7 @@ class Application
     if req.path.match(/items/)
 
       match_value = @@items.select {|item|
-        item.name = req.path.split("/items/").last
+        item.name == req.path.split("/items/").last
       }
 
       if match_value.length > 0
