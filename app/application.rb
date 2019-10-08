@@ -6,10 +6,12 @@ class Application
     req = Rack::Request.new(env)
 
     puts @@items
-=begin
+
     if req.path.match(/items/)
 
-      @@items.include?(req.path.split("/items/").last)
+      @@items.select {|item|
+      item.name = req.path.split("/items/").last
+    }
       if @@items.include?(item.name)
         resp.write "#{item.price}"
       else
@@ -20,7 +22,7 @@ class Application
       resp.write "Route not found"
       resp.status = 404
     end
-=end
+
 
     resp.finish
   end
