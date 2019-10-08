@@ -5,7 +5,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    puts @@items
+    #puts @@items
 
     if req.path.match(/items/)
 
