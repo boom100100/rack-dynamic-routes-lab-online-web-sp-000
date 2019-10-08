@@ -14,7 +14,7 @@ class Application
       }
 
       if match_value != nil
-        puts match_value
+        puts match_value.length
         resp.write "#{match_value.price}"
       else
         resp.write "Item not found"
