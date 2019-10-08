@@ -11,7 +11,7 @@ class Application
 
       match_value = @@items.select {|item|
         item.name = req.path.split("/items/").last
-      }.uniq
+      }
 
       if match_value.length > 0
         resp.write match_value[0].price
