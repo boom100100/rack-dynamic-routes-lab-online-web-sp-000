@@ -10,9 +10,11 @@ class Application
     if req.path.match(/items/)
 
       match_value = @@items.select {|item|
-      item.name = req.path.split("/items/").last
-    }
+        item.name = req.path.split("/items/").last
+      }
+      
       if match_value != nil
+        puts match_value
         resp.write "#{match_value.price}"
       else
         resp.write "Item not found"
