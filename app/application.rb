@@ -15,10 +15,11 @@ class Application
 
       if match_value.length != 0
         resp.write match_value[0].price
-      else
-        resp.write "Item not found"
-        resp.status = 400
       end
+    else
+      resp.write "Item not found"
+      resp.status = 400
+    end
 
       
     else
