@@ -9,11 +9,11 @@ class Application
 
     if req.path.match(/items/)
 
-      @@items.select {|item|
+      match_value = @@items.select {|item|
         item.name = req.path.split("/items/").last
       }.uniq
 
-      if match_value != nil
+      if match_value.length != 0
         puts match_value.length
         #resp.write "#{match_value.price}"
       else
