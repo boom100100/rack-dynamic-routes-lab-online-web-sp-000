@@ -14,7 +14,7 @@ class Application
       }.uniq
 
       if match_value.length != 0
-        puts match_value[0].prics]
+        puts match_value[0].price
         #resp.write "#{match_value.price}"
       else
         resp.write "Item not found"
