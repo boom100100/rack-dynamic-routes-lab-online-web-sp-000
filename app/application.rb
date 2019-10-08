@@ -9,11 +9,11 @@ class Application
 
     if req.path.match(/items/)
 
-      @@items.select {|item|
+      match_value = @@items.select {|item|
       item.name = req.path.split("/items/").last
     }
-      if @@items.include?(item.name)
-        resp.write "#{item.price}"
+      if match_value != nil
+        resp.write "#{match_value.price}"
       else
         resp.write "Item not found"
         resp.status = 400
