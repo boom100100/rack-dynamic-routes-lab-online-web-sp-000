@@ -13,13 +13,12 @@ class Application
         item.name = req.path.split("/items/").last
       }.uniq
 
-      if match_value.length != 0
+      if match_value.length > 0
         resp.write match_value[0].price
-      #end
-    else
-      resp.write "Item not found"
-      resp.status = 400
-    end
+      else
+        resp.write "Item not found"
+        resp.status = 400
+      end
 
 
     else
